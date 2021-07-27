@@ -129,10 +129,8 @@
         cursor: pointer;
     }
 
-
-
 </style>
-
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
 <head>
     <title>Profil de risque WEInvest </title>
@@ -146,9 +144,9 @@
 
 <script>
     
-    $('#myModal').on('shown.bs.modal', function () {
-  $('#myInput').trigger('focus')
-});
+//   $('#myModal').on('shown.bs.modal', function () {
+// $('#myInput').trigger('focus')
+//});
 
 </script>
 <body>
@@ -180,7 +178,7 @@
 
     <p>Le but de ce quiz est de vous permettre de vous connaître au mieux. A travers de simples questions sur votre vision de l'investissement et de vos prises de risque (ou non) dans certaines situation : apprenez quel type d'investisseur/investisseuse vous êtes.
     </p>
-  
+    <form id="WEInvest-test">
     <div class="question">
         <h3>1- Selon vous, quel investissement est le plus risqué ?</h3>
         <div class="choices">
@@ -313,8 +311,8 @@
             <br>
             <input type="radio" id="100% en actions" name="question-8" value="100% en actions">
             <label for="100% en actions">100% en actions</label>
-            <br>
         </div>
+        <br>
     </div>
 
     <div class="question">
@@ -324,15 +322,14 @@
         <br>
     </div>
 
-    <input type="submit" class="submit" data-toggle="modal" value="Valider et afficher mon profil de risque" href="#modalCenter" onclick="CalculScore()"></input>
-    <div class="bs-example">
+    <input type="submit" class="submit" data-toggle="modal" id="submit-form" value="Valider et afficher mon profil de risque"></input>
+    </form>
    
 </body>
 
 <script>
 
  function CalculScore(){
-
     //Init
     var score=3;
 
@@ -484,9 +481,22 @@
     
      document.getElementById('result').innerHTML = profile;
      document.getElementById('explications').innerHTML = explications;
+     $("#modalCenter").modal('show');
     }
 
+    var $form = $('form#WEInvest-test'),
+    url = 'https://script.google.com/macros/s/AKfycbwP9CDTknMvcZLiOWd1bBJaHpSblADNzBJBPkSs0BZArzRAWgsl9PZ76tLQqBEKEjl8/exec'
 
+$('#submit-form').on('click', function(e) {
+  e.preventDefault();
+  var jqxhr = $.ajax({
+    url: url,
+    method: "GET",
+    dataType: "json",
+    data: $form.serialize(),
+    success:CalculScore()
+
+})})
 
 
 </script>   
