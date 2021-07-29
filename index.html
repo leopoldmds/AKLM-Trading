@@ -6,6 +6,16 @@
     @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
 
+    @media (max-width: 350px) {
+
+        .explications {
+
+        padding-right: 30px !important;
+
+    }
+
+    }
+
     @media (max-width: 500px) {
 
         body {
@@ -63,6 +73,7 @@
         text-align: center;
         justify-content: center;
         font-size: 13px !important;
+
 
     }
 
@@ -171,8 +182,10 @@ display: block;
     .choices {
         text-align: center;
         justify-content: center;
+        font-size: 13px !important;
 
     }
+
 
     .question {
         margin-top: 2%;
@@ -581,30 +594,27 @@ display: block;
     
     if (score==1){
         var profile = "Conservateur"
-        var explications = "L’investisseur auquel s’adresse plus particulièrement le profil conservateur a un horizon de placement relativement court (inférieur à trois années). Il privilégie la génération d’un revenu régulier et relativement stable à la croissance de son capital. Il présente une aversion plutôt élevée pour le risque. Il souhaite éviter tant que faire se peut la dépréciation de son capital. Il n’a pas de connaissance financière particulière et est peu expérimenté en matière de placements financiers."
+        var explications = "Le profil du Conservateur souhaite minimiser le risque au maximum. Il privilégie les revenus réguliers et relativement stables. Il présente une aversion plutôt élevée pour le risque. L'aversion au risque peut inciter des personnes à investir dans des valeurs à faible rendement car le risque de perte est faible. Il n’a pas de connaissance financière particulière et est peu expérimenté en matière de placements financiers."
     }
 
     if (score==2){
         var profile = "Défensif"
-        var explications = "L’investisseur auquel s’adresse plus particulièrement le profil défensif a un horizon de placement de moyen terme (entre trois et cinq années). Il privilégie la génération d’un revenu régulier, mais souhaite également une croissance modeste de son capital. Il présente une aversion moyenne pour le risque. Il accepte que son capital puisse se déprécier modérément, mais, dans la mesure du possible, pas au-delà de son horizon de placement. Il dispose de quelques connaissances financières et a déjà réalisé personnellement quelques placements financiers prudents."
+        var explications = "Le profil Défensif désire minimiser le risque. Il privilégie un revenu régulier, mais souhaite également une croissance modeste de son capital. Il présente une aversion moyenne pour le risque. Il accepte que son capital puisse se déprécier modérément, mais, dans la mesure du possible, pas au-delà de son horizon de placement."
     }
 
     if (score==3){
         var profile = "Equilibré"
-        var explications = "L’investisseur auquel s’adresse plus particulièrement le profil équilibré a un horizon de placement de moyen à long terme (entre cinq et sept années). Il privilégie la croissance de son capital à la génération d’un revenu régulier. Il présente une aversion modérée pour le risque. Il accepte que son capital puisse se déprécier, mais, dans la mesure du possible, pas au-delà de son horizon de placement. Il dispose de bonnes connaissances financières et a déjà réalisé personnellement quelques placements financiers de bon père de famille."
-
+        var explications = "Le profil Équilibré recherche le compromis entre la sécurité et le rendement, entre la préservation du capital et la croissance à long terme. Il privilégie la croissance de son capital à son revenu régulier. Il présente une aversion modérée pour le risque. Il accepte que son capital puisse se déprécier, mais, dans la mesure du possible, pas au-delà de son horizon de placement. Il dispose de connaissances financières."
     }
     
     if (score==4){
         var profile = "Offensif"
-        var explications = "L’investisseur auquel s’adresse plus particulièrement le profil offensif a un horizon de placement relativement long (supérieur à sept années). Il privilégie la croissance de son capital et attache peu d’importance au revenu généré, dont il peut se passer. Il présente une faible aversion pour le risque. Il accepte que son capital puisse se déprécier sensiblement, sachant que c’est le prix à payer pendant parfois plusieurs années pour bénéficier d’un meilleur taux de rendement à plus long terme. Il dispose de bonnes connaissances financières et d’une expérience sérieuse des placements boursiers."
-
-
+        var explications = "Le profil Offensif correspond aux investisseurs qui sont prêts à prendre un certain nombre de de risque. L'accent est mis sur l'appréciation du portefeuille au fil du temps. Les investisseurs qui utilisent ce modèle doivent être prêts à assumer un niveau élevé de volatilité du portefeuille et de risque de perte de capital. Un portefeuille type sera exposé à diverses classes d'actifs, mais sera principalement mais sera principalement axé sur les actions."
     }
 
     if (score==5){
         var profile = "Agressif"
-        var explications = "L’investisseur auquel s’adresse plus particulièrement le profil agressif a un horizon de placement très long (supérieur à dix années). Il privilégie la croissance de son capital et n’attache aucune importance au revenu généré, dont il n’a pas besoin. Il présente une faible aversion pour le risque. Il accepte que son capital puisse se déprécier sensiblement et rapidement, sachant que c’est le prix à payer pendant parfois plusieurs années pour bénéficier d’un meilleur taux de rendement à plus long terme. Il dispose de très bonnes connaissances financières et d’une longue expérience des placements boursiers."
+        var explications = "Le profil Agressif correspond aux investisseurs qui sont prêts à prendre des risques importants. L'accent est mis sur l'obtention d'une appréciation du portefeuille supérieure à la moyenne au fil du temps. Les investisseurs qui utilisent ce modèle doivent être prêts à assumer un niveau important de volatilité du portefeuille et de risque de perte de capital. Un portefeuille type sera exposé à diverses catégories d'actifs, mais sera fortement pondéré en actions."
     }
     
      document.getElementById('result').innerHTML = profile;
